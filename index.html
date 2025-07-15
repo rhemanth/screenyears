@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Lifetime Screen Time Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="highlighter-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1>📱 SCREEN TIME ANALYTICS</h1>
+                    <p>Lifetime Calculator & Digital Wellness Dashboard</p>
+                </div>
+                <div class="header-right">
+                    <div class="header-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">DAILY AVERAGE</span>
+                            <span class="stat-value" id="headerScreenTime">0h</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">LIFETIME YEARS</span>
+                            <span class="stat-value" id="headerLifetimeYears">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <header>
+                <h1>LIFETIME SCREEN TIME CALCULATOR</h1>
+                <p>Discover how much of your life you'll spend looking at screens</p>
+            </header>
+
+            <main>
+            <div class="input-section">
+                <div class="card">
+                    <h2>Enter Your Daily Screen Time</h2>
+                    <form id="screenTimeForm">
+                        <div class="input-group">
+                            <label for="screenTime">Average daily screen time: <span id="screenTimeValue">0</span> hours</label>
+                            <div class="slider-container">
+                                <input 
+                                    type="range" 
+                                    id="screenTime" 
+                                    name="screenTime" 
+                                    min="0" 
+                                    max="48" 
+                                    step="1" 
+                                    value="0"
+                                    class="slider"
+                                >
+                                <div class="slider-labels">
+                                    <span>0h</span>
+                                    <span>6h</span>
+                                    <span>12h</span>
+                                    <span>18h</span>
+                                    <span>24h</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">Calculate My Lifetime</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📱</div>
+                        <h3>Screen Time</h3>
+                        <div class="stat-value" id="screenTimeYears">0</div>
+                        <div class="stat-label">Years of your life</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">😴</div>
+                        <h3>Sleep Time</h3>
+                        <div class="stat-value" id="sleepTimeYears">26.7</div>
+                        <div class="stat-label">Years of your life</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <h3>Other Activities</h3>
+                        <div class="stat-value" id="otherTimeYears">53.3</div>
+                        <div class="stat-label">Years of your life</div>
+                    </div>
+                </div>
+
+                <div class="chart-section">
+                    <div class="card">
+                        <h2>Your Lifetime Breakdown</h2>
+                        <div class="chart-container">
+                            <canvas id="lifetimeChart"></canvas>
+                        </div>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #FF6B6B;"></span>
+                                <span>Screen Time</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #4ECDC4;"></span>
+                                <span>Sleep Time</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #45B7D1;"></span>
+                                <span>Other Activities</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insights-section">
+                    <div class="card">
+                        <h2>💡 Insights</h2>
+                        <div id="insights" class="insights-content">
+                            <!-- Insights will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </main>
+
+            <footer>
+                <p>Made with ❤️ | Calculate your digital footprint</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
